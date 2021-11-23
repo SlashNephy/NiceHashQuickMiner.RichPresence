@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "NiceHashQuickMinerRichPresence (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "NiceHashQuickMinerRichPresence (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

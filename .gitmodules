@@ -1,0 +1,4 @@
+[submodule "WinUIEx"]
+	path = WinUIEx
+	url = https://github.com/dotMorten/WinUIEx
+	ignore = dirty

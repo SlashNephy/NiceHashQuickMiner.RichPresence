@@ -1,0 +1,105 @@
+﻿<Window
+    x:Class="NiceHashQuickMinerRichPresence.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    mc:Ignorable="d"
+>
+    <StackPanel Orientation="Vertical">
+        <TextBox
+            Header="API Host"
+            ToolTipService.ToolTip="Specify the API host that excavator.exe is published on.
+The value can be found in nhqm.conf (watchDogAPIHost).
+In most cases, you do not need to change it."
+            Text="{x:Bind configManager.Config.ExcavatorApiHost, Mode=TwoWay}"
+            AutomationProperties.Name="simple TextBox"
+        />
+        <muxc:NumberBox
+            Header="API Port"
+            ToolTipService.ToolTip="Specify the API port number that excavator.exe is published on.
+The value can be found in nhqm.conf (watchDogAPIPort).
+In most cases, you do not need to change it."
+            Value="{x:Bind configManager.Config.ExcavatorApiPort, Mode=TwoWay}"
+            SpinButtonPlacementMode="Inline"
+            Minimum="0"
+            Maximum="65535"
+            ValidationMode="InvalidInputOverwritten"
+        />
+        <TextBox
+            Header="API Auth"
+            ToolTipService.ToolTip="Specify the API auth token number that excavator.exe is published on.
+The value can be found in nhqm.conf (watchDogAPIAuth).
+You may need to configure this if you are running the miner on a different computer."
+            Text="{x:Bind configManager.Config.ExcavatorApiAuth, Mode=TwoWay}"
+            AutomationProperties.Name="simple TextBox"
+        />
+
+        <TextBox 
+            Header="Discord Application ID"
+            ToolTipService.ToolTip="Specifies the Application ID for Discord.
+You can get the ID at https://discord.com/developers/applications."
+            Text="{x:Bind configManager.Config.DiscordApplicationId, Mode=TwoWay}"
+            AutomationProperties.Name="simple TextBox"
+        />
+        <TextBox
+            Header="Details template"
+            ToolTipService.ToolTip="You can customize the template for the Details part of the Rich Presence in Discord.
+For more information about the Presence parts, see https://discord.com/developers/docs/rich-presence/how-to#updating-presence."
+            Text="{x:Bind configManager.Config.DetailsTemplate, Mode=TwoWay}"
+            AutomationProperties.Name="simple TextBox"
+        />
+        <TextBox
+            Header="State template"
+            ToolTipService.ToolTip="You can customize the template for the State part of the Rich Presence in Discord.
+For more information about the Presence parts, see https://discord.com/developers/docs/rich-presence/how-to#updating-presence."
+            Text="{x:Bind configManager.Config.StateTemplate, Mode=TwoWay}"
+            AutomationProperties.Name="simple TextBox"
+        />
+        <ToggleSwitch
+            Header="Display LargeImage"
+            IsOn="{x:Bind configManager.Config.EnableLargeImage, Mode=TwoWay}"
+            AutomationProperties.Name="simple ToggleSwitch"
+        />
+        <TextBox
+            Header="LargeImageText template"
+            ToolTipService.ToolTip="You can customize the template for the LargeImageText part of the Rich Presence in Discord.
+For more information about the Presence parts, see https://discord.com/developers/docs/rich-presence/how-to#updating-presence."
+            Text="{x:Bind configManager.Config.LargeImageTextTemplate, Mode=TwoWay}"
+            AutomationProperties.Name="simple TextBox"
+        />
+        <ToggleSwitch
+            Header="Display SmallImage"
+            IsOn="{x:Bind configManager.Config.EnableSmallImage, Mode=TwoWay}"
+            AutomationProperties.Name="simple ToggleSwitch"
+        />
+        <TextBox
+            Header="SmallImageText template"
+            ToolTipService.ToolTip="You can customize the template for the SmallImageText part of the Rich Presence in Discord.
+For more information about the Presence parts, see https://discord.com/developers/docs/rich-presence/how-to#updating-presence."
+            Text="{x:Bind configManager.Config.SmallImageTextTemplate, Mode=TwoWay}"
+            AutomationProperties.Name="simple TextBox"
+        />
+        <muxc:NumberBox
+            Header="Update interval (ms)"
+            ToolTipService.ToolTip="Sets the frequency of updating the Rich Presence content in microseconds."
+            SpinButtonPlacementMode="Inline"
+            ValidationMode="InvalidInputOverwritten"
+            Value="{x:Bind configManager.Config.UpdateIntervalMs, Mode=TwoWay}"
+        />
+
+        <StackPanel Orientation="Horizontal">
+            <Button
+                Style="{StaticResource AccentButtonStyle}"
+                Content="Save to File"
+                Click="SaveConfigButton_Click"
+            />
+            <Button
+                Style="{StaticResource AccentButtonStyle}"
+                Content="Open in Editor"
+                Click="OpenConfigButton_Click"
+            />
+        </StackPanel>
+    </StackPanel>
+</Window>
