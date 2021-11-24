@@ -6,6 +6,7 @@ using NiceHashQuickMinerRichPresence.Discord.Formatter;
 using NiceHashQuickMinerRichPresence.Excavator;
 using NiceHashQuickMinerRichPresence.Tasks;
 using System;
+using System.Diagnostics;
 using WinUIEx;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -26,12 +27,24 @@ public partial class App : Application
     /// </summary>
     public App()
     {
+#if DEBUG
+        UnhandledException += OnUnhandledException;
+#endif
+
         var collection = new ServiceCollection();
         RegisterServices(collection);
         ServiceProvider = collection.BuildServiceProvider();
 
         InitializeComponent();
     }
+
+#if DEBUG
+    private void OnUnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
+    {
+        Debug.WriteLine(e.Exception);
+        Debug.WriteLine(e.Exception.StackTrace);
+    }
+#endif
 
     private static void RegisterServices(IServiceCollection collection)
     {
