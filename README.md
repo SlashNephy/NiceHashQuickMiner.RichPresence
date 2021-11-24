@@ -3,7 +3,7 @@
 Discord Rich Presence for NiceHash QuickMiner
 
 NiceHash QuickMiner のマイニング状況を Discord に Rich Presence として通知します。  
-折角なので先月リリースされたばかりの .NET 6 + WinUI 3 で実装しています。
+折角なので先週リリースされたばかりの .NET 6 + WinUI 3 で実装しています。
 
 ![Rich Presence](https://i.imgur.com/e5XbLDX.png)
 
