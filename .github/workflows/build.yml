@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          submodule: recursive
+          submodules: recursive
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
