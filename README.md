@@ -13,6 +13,8 @@ NiceHash QuickMiner のマイニング状況を Discord に Rich Presence とし
 
 ちょっとまってね
 
+[#1652](https://github.com/microsoft/WindowsAppSDK/issues/1652) が解決されるまで CI は動きません。
+
 ## Known Issues
 
 - 通知アイコンを触る API が未実装なので、タスクバーにアイコンが残ってしまう (通知領域にしまいたい)
