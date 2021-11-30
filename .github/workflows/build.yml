@@ -34,3 +34,6 @@ jobs:
 
       - name: Build
         run: msbuild /p:Configuration=Release /restore -m
+
+      - name: Pack
+        run: msbuild /p:Configuration=Release /t:Pack
