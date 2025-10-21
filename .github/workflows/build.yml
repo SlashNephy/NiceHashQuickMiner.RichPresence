@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
         with:
           submodules: recursive
 
@@ -27,7 +27,7 @@ jobs:
       #     DOTNET_CLI_TELEMETRY_OPTOUT: true
 
       - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
+        uses: microsoft/setup-msbuild@ede762b26a2de8d110bb5a3db4d7e0e080c0e917 # v1
         with:
           vs-version: '[17.0,18.0)'
           msbuild-architecture: x64
